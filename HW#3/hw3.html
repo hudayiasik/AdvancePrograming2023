@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>
+        How to create an image element
+        dynamically using JavaScript ?
+    </title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body id="body" style="text-align:center;">
+
+    <h1 style="color:green;">
+        GeeksforGeeks
+    </h1>
+    <img id="images" src="sprites/tile001.png" alt="images">
+
+    <p id="GFG_UP" style="font-size: 15px; font-weight: bold;">
+    </p>
+
+    <button onclick="start();">
+        Start
+    </button>
+    <button onclick="pause();">
+        Pause
+    </button>
+    <button onclick="stop();">
+        Stop
+    </button>
+    <button onclick="next();draw();">
+        Next
+    </button>
+    <button id='buttonId' onclick="prev();draw();">
+        Prev
+    </button>
+
+    <p id="GFG_DOWN" style="color:green; font-size: 20px; font-weight: bold;">
+    </p>
+
+    <script src='index.js'>
+    </script>
+</body>
+
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+dd
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img id="images" src="sprites/tile000.png" alt="sprites">
+    <button> pause</button>
+    <button onclick="load_pic()">Try it</button>
+    <button> pause</button>
+    <button> pause</button>
+    <p></p>
+    prop
+    </p>
+
+    <script >
+
+        
+async function load_pic() {
+
+      const url = 'sprites/tile002.png'
+
+        const options = {
+            method: "GET"
+        }
+
+        let response = await fetch(url, options)
+
+        if (response.status === 200) {
+
+            const imageBlob = await response.blob()
+            const imageObjectURL = URL.createObjectURL(imageBlob);
+
+            const image = document.createElement('img')
+            img.src = imageObjectURL
+
+            const container = document.getElementById("images")
+            container.append(image)
+        }
+        else {
+            console.log("HTTP-Error: " + response.status)
+        }
+}
+    </script>
+
+</body>
+
+</html>
+-->
