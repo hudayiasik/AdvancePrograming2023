@@ -1,12 +1,11 @@
-var count = 0;
-var up = document.getElementById('GFG_UP');
+let count = 0;
+let up = document.getElementById('GFG_UP');
 up.innerHTML = "Click on the button to add image element";
-var down = document.getElementById('GFG_DOWN');
+let down = document.getElementById('GFG_DOWN');
 let id = null;
 let img = document.getElementById('images');
 let vis = true;
 function start() {
-    document.getElementById("buttonID").display = "none";
     clearInterval(id);
     id = setInterval(frame, 175);
     function frame() {
@@ -30,9 +29,11 @@ function stop() {
 }
 function next() {
     count = count + 1;
+    if (count == 8) count = 0;
 }
 function prev() {
     count = count - 1;
+    if (count == -1) count = 7;
 }
 let images = [];
 
