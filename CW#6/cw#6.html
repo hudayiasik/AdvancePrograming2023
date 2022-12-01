@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="icon" href="icon.png">
-  <title>GitHub Users</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
 
-<style>
-    body {
-        max-width: 440px;
-        font-size: 12px;
-        margin-left: 5px;
-    }
-    img {
-        padding-right: 12px; 
-        width: 64px;
-    }
-    #user{
-        font-size: 10px;
-        margin-left: 15px;
-    }
-  </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="icon.png">
+    <title>GitHub Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            max-width: 450px;
+            font-size: 15px;
+            margin-left: 5px;
+        }
+
+        img {
+            padding-right: 15px;
+            width: 64px;
+        }
+
+        #user {
+            font-size: 10px;
+            margin-left: 15px;
+        }
+    </style>
 </head>
 
 <body>
 
-<h2 id=title>Github Users</h2>
-<input type=text id=user value=gayeugur onChange="readUser()">
-<div> &emsp;</div>
-<div>
-    &emsp;
-<img src="" alt="" id="profil" style="width: 300px; height: 300px;">
+    <h2 id=title>Github Users</h2>
+    <input type=text id=user value=hudayiasik onChange="readUser()">
+    <div> &emsp;</div>
+    <div> &emsp;
+        <img src="" alt="" id="profil" style="width: 300px; height: 300px;">
 
-</div>
-<div>
-    <p><h3 id="name"></h3></p>
-    <p><h3 id="userName"></h3></p>
-    <p><i class="fa fa-university" aria-hidden="true"></i><span id="company"></span></p>
-    <p> <i class="fa fa-map-marker" aria-hidden="true"></i><span id="location"></span> </p>
-    <p> <i class="fa fa-link" aria-hidden="true"></i><span id="blog"></span> </p>
-</div>
+    </div>
+    <div>
+        <p>
+        <h3 id="name"></h3>
+        </p>
+        <p>
+        <h3 id="userName"></h3>
+        </p>
+        <p><i class="fa fa-university" aria-hidden="true"></i><span id="company"></span></p>
+        <p> <i class="fa fa-map-marker" aria-hidden="true"></i><span id="location"></span> </p>
+        <p> <i class="fa fa-link" aria-hidden="true"></i><span id="blog"></span> </p>
+    </div>
 
-<p id=out></p>
-<b>Sample code</b>
-<pre id=sample>
+    <p id=out></p>
+    <b>Sample code</b>
+    <pre id=sample>
     async function toJSON(url) {
         let r = await fetch(url)
         if (!r.ok) error(r.statusText)
         return r.json()
     }
     async function readUser() {
-          URL = "https://api.github.com/users/"
+        URL = "https://api.github.com/users/"
         let u = await toJSON(URL+user.value)
         let profil = document.querySelector("#profil")
         profil.src = u.avatar_url
     
-        document.querySelector("#name").innerText =
-         u.name?u.name:"no Info"
-        document.querySelector("#userName").innerText =
-         u.login?u.login:"no Info"
-        document.querySelector("#company").innerText =
-         u.company?u.company:"no Info"
-        document.querySelector("#location").innerText = 
-        u.location?u.location:"no Info"
-        document.querySelector("#blog").innerText = 
-        u.blog?u.blog:"no Info"
+        document.querySelector("#name").innerText     = u.name?u.name:"no Info"
+        document.querySelector("#userName").innerText = u.login?u.login:"no Info"
+        document.querySelector("#company").innerText  = u.company?u.company:"no Info"
+        document.querySelector("#location").innerText = u.location?u.location:"no Info"
+        document.querySelector("#blog").innerText     = u.blog?u.blog:"no Info"
         
         console.log("foto url : " + u.avatar_url)
         console.log("company: " + u.company)
@@ -76,35 +77,31 @@
     readUser()
 
 <script>
-"use strict";
+    "use strict";
 
-async function toJSON(url) {
-    let r = await fetch(url)
-    if (!r.ok) error(r.statusText)
-    return r.json()
-}
-async function readUser() {
-      URL = "https://api.github.com/users/"
-    let u = await toJSON(URL+user.value)
-    let profil = document.querySelector("#profil")
-    profil.src = u.avatar_url
+    async function toJSON(url) {
+        let r = await fetch(url)
+        if (!r.ok) error(r.statusText)
+        return r.json()
+    }
+    async function readUser() {
+        URL = "https://api.github.com/users/"
+        let u = await toJSON(URL + user.value)
+        let profil = document.querySelector("#profil")
+        profil.src = u.avatar_url
 
-    document.querySelector("#name").innerText = u.name ? u.name : "No data"
-    document.querySelector("#userName").innerText = u.login ? u.login : "No data"
-    document.querySelector("#company").innerText = u.company ? u.company : "No data"
-    document.querySelector("#location").innerText = u.location ? u.location : "No data"
-    document.querySelector("#blog").innerText = u.blog ? u.blog :"No data"
-    
-    console.log("foto url : " + u.avatar_url)
-    console.log("company: " + u.company)
-    console.log("location: " + u.location)
-    console.log("blog : " + u.blog)
-}
+        document.querySelector("#name").innerText = u.name ? u.name : "No data"
+        document.querySelector("#userName").innerText = u.login ? u.login : "No data"
+        document.querySelector("#company").innerText = u.company ? u.company : "No data"
+        document.querySelector("#location").innerText = u.location ? u.location : "No data"
+        document.querySelector("#blog").innerText = u.blog ? u.blog : "No data"
 
-readUser()
-
-
+        console.log("foto url : " + u.avatar_url)
+        console.log("company: " + u.company)
+        console.log("location: " + u.location)
+        console.log("blog : " + u.blog)
+    }
+    readUser()
 </script>
-
 </body>
 </html>
