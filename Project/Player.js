@@ -62,15 +62,6 @@ export default class Player {
     }
   };
 
-  onMousePressed() {
-    this.shootPressed = true;
-  }
-  onMouseLeave() {
-    this.shootPressed = false;
-  }
-
-
-
   keyup = (event) => {
     if (event.code == "ArrowRight") {
       this.rightPressed = false;
