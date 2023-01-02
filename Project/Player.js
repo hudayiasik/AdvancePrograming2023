@@ -20,13 +20,13 @@ export default class Player {
       var rect = e.target.getBoundingClientRect();
       this.x = e.touches[0].clientX - rect.left;
     });
-    /*
-        document.addEventListener("mousemove", (event) => {
-          this.x = event.clientX - this.width / 2;
-          var rect = event.target.getBoundingClientRect();
-          this.x = event.clientX - rect.left; //x position within the element.
-        });
-    */
+
+    document.addEventListener("mousemove", (event) => {
+      this.x = event.clientX - this.width / 2;
+      var rect = event.target.getBoundingClientRect();
+      this.x = event.clientX - rect.left; //x position within the element.
+    });
+
 
   }
 

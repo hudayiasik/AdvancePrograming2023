@@ -47,7 +47,7 @@ export default class EnemyController {
       enemyRow.forEach((enemy, enemyIndex) => {
         if (this.playerBulletController.collideWith(enemy)) {
           this.enemyDeathSound.currentTime = 0;
-          this.enemyDeathSound.play();
+          //this.enemyDeathSound.play();
           enemyRow.splice(enemyIndex, 1);
         }
       });
@@ -129,7 +129,7 @@ export default class EnemyController {
     });
   }
 
-  happy = () => {};
+  happy = () => { };
 
   createEnemies() {
     this.enemyMap.forEach((row, rowIndex) => {
