@@ -15,12 +15,18 @@ export default class Player {
     this.image = new Image();
     this.image.src = "images/player.png";
 
-    document.addEventListener("mousemove", (event) => {
-      this.x = event.clientX - this.width / 2;
-      var rect = event.target.getBoundingClientRect();
-      this.x = event.clientX - rect.left; //x position within the element.
+    canvas.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      var rect = e.target.getBoundingClientRect();
+      this.x = e.touches[0].clientX - rect.left;
     });
-
+    /*
+        document.addEventListener("mousemove", (event) => {
+          this.x = event.clientX - this.width / 2;
+          var rect = event.target.getBoundingClientRect();
+          this.x = event.clientX - rect.left; //x position within the element.
+        });
+    */
 
   }
 
