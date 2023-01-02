@@ -15,10 +15,23 @@ export default class Player {
     this.image = new Image();
     this.image.src = "images/player.png";
 
+    document.addEventListener("mousemove", (event) => {
+      this.x = event.clientX - this.width / 2;
+      var rect = event.target.getBoundingClientRect();
+      this.x = event.clientX - rect.left; //x position within the element.
+    });
+    document.addEventListener("mousedown", (event) => {
+      if (event.button === 0) {
+        this.shootPressed = true;
+      }
+    });
+    document.addEventListener("mouseup", (event) => {
+      if (event.button === 0) {
+        this.shootPressed = false;
+      }
+    });
 
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener("keydown", this.keydown);
-    document.addEventListener("keyup", this.keyup);
+
   }
 
   draw(ctx) {
