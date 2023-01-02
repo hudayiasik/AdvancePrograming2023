@@ -5,7 +5,7 @@ import BulletController from "./BulletController.js";
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-canvas.width = 600;
+canvas.width = 400;
 canvas.height = 600;
 // canvas elementinin görüntülenen ve çalışma alanı boyutlarını eşitle
 canvas.style.width = "100%";
